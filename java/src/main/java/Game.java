@@ -15,7 +15,7 @@ public class Game {
             throw new Exception("Invalid next player");
         }
         //if not first move but play on an already played tile
-        else if (_board.TileAt(position).symbol != Symbol.EMPTY) {
+        else if (_board.TileAt(position).isNotEmpty()) {
             throw new Exception("Invalid position");
         }
 
@@ -26,9 +26,9 @@ public class Game {
 
     public Symbol Winner() {
         //if the positions in first row are taken
-        if (_board.TileAt(new Position(0, 0)).symbol != Symbol.EMPTY &&
-                _board.TileAt(new Position(0, 1)).symbol != Symbol.EMPTY &&
-                _board.TileAt(new Position(0, 2)).symbol != Symbol.EMPTY) {
+        if (_board.TileAt(new Position(0, 0)).isNotEmpty() &&
+                _board.TileAt(new Position(0, 1)).isNotEmpty() &&
+                _board.TileAt(new Position(0, 2)).isNotEmpty()) {
             //if first row is full with same symbol
             if (_board.TileAt(new Position(0, 0)).symbol ==
                     _board.TileAt(new Position(0, 1)).symbol &&
@@ -38,9 +38,9 @@ public class Game {
         }
 
         //if the positions in first row are taken
-        if (_board.TileAt(new Position(1, 0)).symbol != Symbol.EMPTY &&
-                _board.TileAt(new Position(1, 1)).symbol != Symbol.EMPTY &&
-                _board.TileAt(new Position(1, 2)).symbol != Symbol.EMPTY) {
+        if (_board.TileAt(new Position(1, 0)).isNotEmpty() &&
+                _board.TileAt(new Position(1, 1)).isNotEmpty() &&
+                _board.TileAt(new Position(1, 2)).isNotEmpty()) {
             //if middle row is full with same symbol
             if (_board.TileAt(new Position(1, 0)).symbol ==
                     _board.TileAt(new Position(1, 1)).symbol &&
@@ -51,9 +51,9 @@ public class Game {
         }
 
         //if the positions in first row are taken
-        if (_board.TileAt(new Position(2, 0)).symbol != Symbol.EMPTY &&
-                _board.TileAt(new Position(2, 1)).symbol != Symbol.EMPTY &&
-                _board.TileAt(new Position(2, 2)).symbol != Symbol.EMPTY) {
+        if (_board.TileAt(new Position(2, 0)).isNotEmpty() &&
+                _board.TileAt(new Position(2, 1)).isNotEmpty() &&
+                _board.TileAt(new Position(2, 2)).isNotEmpty()) {
             //if middle row is full with same symbol
             if (_board.TileAt(new Position(2, 0)).symbol ==
                     _board.TileAt(new Position(2, 1)).symbol &&

@@ -12,4 +12,8 @@ public class Tile
         }
         this.symbol = symbol;
     }
+
+    public boolean isNotEmpty() {
+        return this.symbol != Symbol.EMPTY;
+    }
 }
