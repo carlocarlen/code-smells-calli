@@ -1,7 +1,14 @@
 
 public class Tile
 {
-    public int X;
-    public int Y;
+    private final Position position;
     public char Symbol;
+
+    public Tile(Position position) {
+        this.position = position;
+    }
+
+    public Position getPosition() {
+        return position;
+    }
 }
