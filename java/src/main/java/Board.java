@@ -24,4 +24,24 @@ public class Board
     public void AddTileAt(Symbol symbol, Position position) throws Exception {
         TileAt(position).play(symbol);
     }
+
+    boolean isThirdRowCompleted() {
+        return TileAt(new Position(2, 0)).symbol ==
+                TileAt(new Position(2, 1)).symbol &&
+                TileAt(new Position(2, 2)).symbol ==
+                        TileAt(new Position(2, 1)).symbol;
+    }
+
+    boolean isSecondRowCompleted() {
+        return TileAt(new Position(1, 0)).symbol ==
+                TileAt(new Position(1, 1)).symbol &&
+                TileAt(new Position(1, 2)).symbol ==
+                        TileAt(new Position(1, 1)).symbol;
+    }
+
+    boolean isFirstRowCompleted() {
+        return TileAt(new Position(0, 0)).symbol ==
+                TileAt(new Position(0, 1)).symbol &&
+                TileAt(new Position(0, 2)).symbol == TileAt(new Position(0, 1)).symbol;
+    }
 }

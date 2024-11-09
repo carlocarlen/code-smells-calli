@@ -29,10 +29,7 @@ public class Game {
         if (_board.TileAt(new Position(0, 0)).isNotEmpty() &&
                 _board.TileAt(new Position(0, 1)).isNotEmpty() &&
                 _board.TileAt(new Position(0, 2)).isNotEmpty()) {
-            //if first row is full with same symbol
-            if (_board.TileAt(new Position(0, 0)).symbol ==
-                    _board.TileAt(new Position(0, 1)).symbol &&
-                    _board.TileAt(new Position(0, 2)).symbol == _board.TileAt(new Position(0, 1)).symbol) {
+            if (_board.isFirstRowCompleted()) {
                 return _board.TileAt(new Position(0, 0)).symbol;
             }
         }
@@ -41,11 +38,7 @@ public class Game {
         if (_board.TileAt(new Position(1, 0)).isNotEmpty() &&
                 _board.TileAt(new Position(1, 1)).isNotEmpty() &&
                 _board.TileAt(new Position(1, 2)).isNotEmpty()) {
-            //if middle row is full with same symbol
-            if (_board.TileAt(new Position(1, 0)).symbol ==
-                    _board.TileAt(new Position(1, 1)).symbol &&
-                    _board.TileAt(new Position(1, 2)).symbol ==
-                            _board.TileAt(new Position(1, 1)).symbol) {
+            if (_board.isSecondRowCompleted()) {
                 return _board.TileAt(new Position(1, 0)).symbol;
             }
         }
@@ -54,16 +47,13 @@ public class Game {
         if (_board.TileAt(new Position(2, 0)).isNotEmpty() &&
                 _board.TileAt(new Position(2, 1)).isNotEmpty() &&
                 _board.TileAt(new Position(2, 2)).isNotEmpty()) {
-            //if middle row is full with same symbol
-            if (_board.TileAt(new Position(2, 0)).symbol ==
-                    _board.TileAt(new Position(2, 1)).symbol &&
-                    _board.TileAt(new Position(2, 2)).symbol ==
-                            _board.TileAt(new Position(2, 1)).symbol) {
+            if (_board.isThirdRowCompleted()) {
                 return _board.TileAt(new Position(2, 0)).symbol;
             }
         }
 
         return Symbol.EMPTY;
     }
+
 }
 
