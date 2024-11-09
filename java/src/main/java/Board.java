@@ -12,7 +12,7 @@ public class Board
             for (int j = 0; j < 3; j++)
             {
                 Tile tile = new Tile(new Position(i, j));
-                tile.Symbol = ' ';
+                tile.Symbol = Symbol.EMPTY;
                 _plays.add(tile);
             }
         }
@@ -28,7 +28,7 @@ public class Board
         return null;
     }
 
-    public void AddTileAt(char symbol, int x, int y)
+    public void AddTileAt(Symbol symbol, int x, int y)
     {
         TileAt(x,y).Symbol = symbol;
     }

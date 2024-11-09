@@ -2,7 +2,7 @@
 public class Tile
 {
     private final Position position;
-    public char Symbol;
+    public Symbol Symbol;
 
     public Tile(Position position) {
         this.position = position;
