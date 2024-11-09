@@ -15,7 +15,7 @@ public class Game {
             throw new Exception("Invalid next player");
         }
         //if not first move but play on an already played tile
-        else if (_board.TileAt(position).Symbol != Symbol.EMPTY) {
+        else if (_board.TileAt(position).symbol != Symbol.EMPTY) {
             throw new Exception("Invalid position");
         }
 
@@ -26,40 +26,40 @@ public class Game {
 
     public Symbol Winner() {
         //if the positions in first row are taken
-        if (_board.TileAt(new Position(0, 0)).Symbol != Symbol.EMPTY &&
-                _board.TileAt(new Position(0, 1)).Symbol != Symbol.EMPTY &&
-                _board.TileAt(new Position(0, 2)).Symbol != Symbol.EMPTY) {
+        if (_board.TileAt(new Position(0, 0)).symbol != Symbol.EMPTY &&
+                _board.TileAt(new Position(0, 1)).symbol != Symbol.EMPTY &&
+                _board.TileAt(new Position(0, 2)).symbol != Symbol.EMPTY) {
             //if first row is full with same symbol
-            if (_board.TileAt(new Position(0, 0)).Symbol ==
-                    _board.TileAt(new Position(0, 1)).Symbol &&
-                    _board.TileAt(new Position(0, 2)).Symbol == _board.TileAt(new Position(0, 1)).Symbol) {
-                return _board.TileAt(new Position(0, 0)).Symbol;
+            if (_board.TileAt(new Position(0, 0)).symbol ==
+                    _board.TileAt(new Position(0, 1)).symbol &&
+                    _board.TileAt(new Position(0, 2)).symbol == _board.TileAt(new Position(0, 1)).symbol) {
+                return _board.TileAt(new Position(0, 0)).symbol;
             }
         }
 
         //if the positions in first row are taken
-        if (_board.TileAt(new Position(1, 0)).Symbol != Symbol.EMPTY &&
-                _board.TileAt(new Position(1, 1)).Symbol != Symbol.EMPTY &&
-                _board.TileAt(new Position(1, 2)).Symbol != Symbol.EMPTY) {
+        if (_board.TileAt(new Position(1, 0)).symbol != Symbol.EMPTY &&
+                _board.TileAt(new Position(1, 1)).symbol != Symbol.EMPTY &&
+                _board.TileAt(new Position(1, 2)).symbol != Symbol.EMPTY) {
             //if middle row is full with same symbol
-            if (_board.TileAt(new Position(1, 0)).Symbol ==
-                    _board.TileAt(new Position(1, 1)).Symbol &&
-                    _board.TileAt(new Position(1, 2)).Symbol ==
-                            _board.TileAt(new Position(1, 1)).Symbol) {
-                return _board.TileAt(new Position(1, 0)).Symbol;
+            if (_board.TileAt(new Position(1, 0)).symbol ==
+                    _board.TileAt(new Position(1, 1)).symbol &&
+                    _board.TileAt(new Position(1, 2)).symbol ==
+                            _board.TileAt(new Position(1, 1)).symbol) {
+                return _board.TileAt(new Position(1, 0)).symbol;
             }
         }
 
         //if the positions in first row are taken
-        if (_board.TileAt(new Position(2, 0)).Symbol != Symbol.EMPTY &&
-                _board.TileAt(new Position(2, 1)).Symbol != Symbol.EMPTY &&
-                _board.TileAt(new Position(2, 2)).Symbol != Symbol.EMPTY) {
+        if (_board.TileAt(new Position(2, 0)).symbol != Symbol.EMPTY &&
+                _board.TileAt(new Position(2, 1)).symbol != Symbol.EMPTY &&
+                _board.TileAt(new Position(2, 2)).symbol != Symbol.EMPTY) {
             //if middle row is full with same symbol
-            if (_board.TileAt(new Position(2, 0)).Symbol ==
-                    _board.TileAt(new Position(2, 1)).Symbol &&
-                    _board.TileAt(new Position(2, 2)).Symbol ==
-                            _board.TileAt(new Position(2, 1)).Symbol) {
-                return _board.TileAt(new Position(2, 0)).Symbol;
+            if (_board.TileAt(new Position(2, 0)).symbol ==
+                    _board.TileAt(new Position(2, 1)).symbol &&
+                    _board.TileAt(new Position(2, 2)).symbol ==
+                            _board.TileAt(new Position(2, 1)).symbol) {
+                return _board.TileAt(new Position(2, 0)).symbol;
             }
         }
 

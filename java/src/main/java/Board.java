@@ -1,6 +1,4 @@
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 public class Board
@@ -13,9 +11,7 @@ public class Board
         {
             for (int j = 0; j < 3; j++)
             {
-                Tile tile = new Tile();
-                tile.Symbol = Symbol.EMPTY;
-                boardMap.put(new Position(i, j), tile);
+                boardMap.put(new Position(i, j), new Tile());
             }
         }
     }
@@ -25,8 +21,7 @@ public class Board
         return boardMap.get(position);
     }
 
-    public void AddTileAt(Symbol symbol, Position position)
-    {
-        TileAt(position).Symbol = symbol;
+    public void AddTileAt(Symbol symbol, Position position) throws Exception {
+        TileAt(position).play(symbol);
     }
 }
