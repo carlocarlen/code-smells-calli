@@ -18,18 +18,18 @@ public class Board
         }
     }
 
-    public Tile TileAt(int x, int y)
+    public Tile TileAt(Position position)
     {
         for (Tile t : _plays) {
-            if (t.getPosition().equals(new Position(x, y))){
+            if (t.getPosition().equals(position)){
                 return t;
             }
         }
         return null;
     }
 
-    public void AddTileAt(Symbol symbol, int x, int y)
+    public void AddTileAt(Symbol symbol, Position position)
     {
-        TileAt(x,y).Symbol = symbol;
+        TileAt(position).Symbol = symbol;
     }
 }
