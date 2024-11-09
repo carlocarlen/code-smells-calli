@@ -1,9 +1,11 @@
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class Board
 {
-    private List<Tile> _plays = new ArrayList<>();
+    private final Map<Position, Tile> boardMap = new HashMap<>();
 
     public Board()
     {
@@ -11,21 +13,16 @@ public class Board
         {
             for (int j = 0; j < 3; j++)
             {
-                Tile tile = new Tile(new Position(i, j));
+                Tile tile = new Tile();
                 tile.Symbol = Symbol.EMPTY;
-                _plays.add(tile);
+                boardMap.put(new Position(i, j), tile);
             }
         }
     }
 
     public Tile TileAt(Position position)
     {
-        for (Tile t : _plays) {
-            if (t.getPosition().equals(position)){
-                return t;
-            }
-        }
-        return null;
+        return boardMap.get(position);
     }
 
     public void AddTileAt(Symbol symbol, Position position)

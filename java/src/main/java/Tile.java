@@ -1,14 +1,9 @@
 
 public class Tile
 {
-    private final Position position;
     public Symbol Symbol;
 
-    public Tile(Position position) {
-        this.position = position;
+    public Tile() {
     }
 
-    public Position getPosition() {
-        return position;
-    }
 }
