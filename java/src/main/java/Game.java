@@ -26,28 +26,22 @@ public class Game {
 
     public Symbol Winner() {
         //if the positions in first row are taken
-        if (_board.TileAt(new Position(0, 0)).isNotEmpty() &&
-                _board.TileAt(new Position(0, 1)).isNotEmpty() &&
-                _board.TileAt(new Position(0, 2)).isNotEmpty()) {
-            if (_board.isFirstRowCompleted()) {
+        if (_board.isRowNotEmpty(0)) {
+            if (_board.isRowCompleted(0)) {
                 return _board.TileAt(new Position(0, 0)).symbol;
             }
         }
 
         //if the positions in first row are taken
-        if (_board.TileAt(new Position(1, 0)).isNotEmpty() &&
-                _board.TileAt(new Position(1, 1)).isNotEmpty() &&
-                _board.TileAt(new Position(1, 2)).isNotEmpty()) {
-            if (_board.isSecondRowCompleted()) {
+        if (_board.isRowNotEmpty(1)) {
+            if (_board.isRowCompleted(1)) {
                 return _board.TileAt(new Position(1, 0)).symbol;
             }
         }
 
         //if the positions in first row are taken
-        if (_board.TileAt(new Position(2, 0)).isNotEmpty() &&
-                _board.TileAt(new Position(2, 1)).isNotEmpty() &&
-                _board.TileAt(new Position(2, 2)).isNotEmpty()) {
-            if (_board.isThirdRowCompleted()) {
+        if (_board.isRowNotEmpty(2)) {
+            if (_board.isRowCompleted(2)) {
                 return _board.TileAt(new Position(2, 0)).symbol;
             }
         }

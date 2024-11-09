@@ -25,23 +25,16 @@ public class Board
         TileAt(position).play(symbol);
     }
 
-    boolean isThirdRowCompleted() {
-        return TileAt(new Position(2, 0)).symbol ==
-                TileAt(new Position(2, 1)).symbol &&
-                TileAt(new Position(2, 2)).symbol ==
-                        TileAt(new Position(2, 1)).symbol;
+    public boolean isRowCompleted(int row) {
+        return TileAt(new Position(row, 0)).symbol ==
+                TileAt(new Position(row, 1)).symbol &&
+                TileAt(new Position(row, 2)).symbol ==
+                        TileAt(new Position(row, 1)).symbol;
     }
 
-    boolean isSecondRowCompleted() {
-        return TileAt(new Position(1, 0)).symbol ==
-                TileAt(new Position(1, 1)).symbol &&
-                TileAt(new Position(1, 2)).symbol ==
-                        TileAt(new Position(1, 1)).symbol;
-    }
-
-    boolean isFirstRowCompleted() {
-        return TileAt(new Position(0, 0)).symbol ==
-                TileAt(new Position(0, 1)).symbol &&
-                TileAt(new Position(0, 2)).symbol == TileAt(new Position(0, 1)).symbol;
+    boolean isRowNotEmpty(int x) {
+        return TileAt(new Position(x, 0)).isNotEmpty() &&
+                TileAt(new Position(x, 1)).isNotEmpty() &&
+                TileAt(new Position(x, 2)).isNotEmpty();
     }
 }
