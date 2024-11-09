@@ -14,42 +14,42 @@ public class GameTest {
 
     @Test
     public void NotAllowPlayerOToPlayFirst() {
-        assertThrows(Exception.class, () -> game.Play(Symbol.O, 0, 0));
+        assertThrows(Exception.class, () -> game.Play(Symbol.O, new Position(0, 0)));
     }
 
     @Test
     public void NotAllowPlayerXToPlayTwiceInARow() {
         assertThrows(Exception.class, () ->{
-            game.Play(Symbol.X, 0, 0);
-            game.Play(Symbol.X, 1, 0);
+            game.Play(Symbol.X, new Position(0, 0));
+            game.Play(Symbol.X, new Position(1, 0));
         });
     }
 
     @Test
     public void NotAllowPlayerToPlayInLastPlayedPosition() {
         assertThrows(Exception.class, () ->{
-            game.Play(Symbol.X, 0, 0);
-            game.Play(Symbol.O, 0, 0);
+            game.Play(Symbol.X, new Position(0, 0));
+            game.Play(Symbol.O, new Position(0, 0));
         });
     }
 
     @Test
     public void NotAllowPlayerToPlayInAnyPlayedPosition() {
         assertThrows(Exception.class, () ->{
-            game.Play(Symbol.X, 0, 0);
-            game.Play(Symbol.O, 1, 0);
-            game.Play(Symbol.X, 0, 0);
+            game.Play(Symbol.X, new Position(0, 0));
+            game.Play(Symbol.O, new Position(1, 0));
+            game.Play(Symbol.X, new Position(0, 0));
         });
     }
 
     @Test
     public void DeclarePlayerXAsAWinnerIfThreeInTopRow() throws Exception
     {
-        game.Play(Symbol.X, 0, 0);
-        game.Play(Symbol.O, 1, 0);
-        game.Play(Symbol.X, 0, 1);
-        game.Play(Symbol.O, 1, 1);
-        game.Play(Symbol.X, 0, 2);
+        game.Play(Symbol.X, new Position(0, 0));
+        game.Play(Symbol.O, new Position(1, 0));
+        game.Play(Symbol.X, new Position(0, 1));
+        game.Play(Symbol.O, new Position(1, 1));
+        game.Play(Symbol.X, new Position(0, 2));
 
         Symbol winner = game.Winner();
 
@@ -59,12 +59,12 @@ public class GameTest {
     @Test
     public void DeclarePlayerOAsAWinnerIfThreeInTopRow() throws Exception
     {
-        game.Play(Symbol.X, 2, 2);
-        game.Play(Symbol.O, 0, 0);
-        game.Play(Symbol.X, 1, 0);
-        game.Play(Symbol.O, 0, 1);
-        game.Play(Symbol.X, 1, 1);
-        game.Play(Symbol.O, 0, 2);
+        game.Play(Symbol.X, new Position(2, 2));
+        game.Play(Symbol.O, new Position(0, 0));
+        game.Play(Symbol.X, new Position(1, 0));
+        game.Play(Symbol.O, new Position(0, 1));
+        game.Play(Symbol.X, new Position(1, 1));
+        game.Play(Symbol.O, new Position(0, 2));
 
         Symbol winner = game.Winner();
 
@@ -74,11 +74,11 @@ public class GameTest {
     @Test
     public void DeclarePlayerXAsAWinnerIfThreeInMiddleRow() throws Exception
     {
-        game.Play(Symbol.X, 1, 0);
-        game.Play(Symbol.O, 0, 0);
-        game.Play(Symbol.X, 1, 1);
-        game.Play(Symbol.O, 0, 1);
-        game.Play(Symbol.X, 1, 2);
+        game.Play(Symbol.X, new Position(1, 0));
+        game.Play(Symbol.O, new Position(0, 0));
+        game.Play(Symbol.X, new Position(1, 1));
+        game.Play(Symbol.O, new Position(0, 1));
+        game.Play(Symbol.X, new Position(1, 2));
 
         Symbol winner = game.Winner();
 
@@ -88,12 +88,12 @@ public class GameTest {
     @Test
     public void DeclarePlayerOAsAWinnerIfThreeInMiddleRow() throws Exception
     {
-        game.Play(Symbol.X, 0, 0);
-        game.Play(Symbol.O, 1, 0);
-        game.Play(Symbol.X, 2, 0);
-        game.Play(Symbol.O, 1, 1);
-        game.Play(Symbol.X, 2, 1);
-        game.Play(Symbol.O, 1, 2);
+        game.Play(Symbol.X, new Position(0, 0));
+        game.Play(Symbol.O, new Position(1, 0));
+        game.Play(Symbol.X, new Position(2, 0));
+        game.Play(Symbol.O, new Position(1, 1));
+        game.Play(Symbol.X, new Position(2, 1));
+        game.Play(Symbol.O, new Position(1, 2));
 
         Symbol winner = game.Winner();
 
@@ -103,11 +103,11 @@ public class GameTest {
     @Test
     public void DeclarePlayerXAsAWinnerIfThreeInBottomRow() throws Exception
     {
-        game.Play(Symbol.X, 2, 0);
-        game.Play(Symbol.O, 0, 0);
-        game.Play(Symbol.X, 2, 1);
-        game.Play(Symbol.O, 0, 1);
-        game.Play(Symbol.X, 2, 2);
+        game.Play(Symbol.X, new Position(2, 0));
+        game.Play(Symbol.O, new Position(0, 0));
+        game.Play(Symbol.X, new Position(2, 1));
+        game.Play(Symbol.O, new Position(0, 1));
+        game.Play(Symbol.X, new Position(2, 2));
 
         Symbol winner = game.Winner();
 
@@ -117,12 +117,12 @@ public class GameTest {
     @Test
     public void DeclarePlayerOAsAWinnerIfThreeInBottomRow() throws Exception
     {
-        game.Play(Symbol.X, 0, 0);
-        game.Play(Symbol.O, 2, 0);
-        game.Play(Symbol.X, 1, 0);
-        game.Play(Symbol.O, 2, 1);
-        game.Play(Symbol.X, 1, 1);
-        game.Play(Symbol.O, 2, 2);
+        game.Play(Symbol.X, new Position(0, 0));
+        game.Play(Symbol.O, new Position(2, 0));
+        game.Play(Symbol.X, new Position(1, 0));
+        game.Play(Symbol.O, new Position(2, 1));
+        game.Play(Symbol.X, new Position(1, 1));
+        game.Play(Symbol.O, new Position(2, 2));
 
         Symbol winner = game.Winner();
 
