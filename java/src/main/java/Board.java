@@ -16,6 +16,10 @@ public class Board
         }
     }
 
+    public Symbol getSymbolAt(Position position) {
+        return TileAt(position).symbol;
+    }
+
     public Tile TileAt(Position position)
     {
         return boardMap.get(position);

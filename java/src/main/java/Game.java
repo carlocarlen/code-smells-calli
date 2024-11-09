@@ -28,21 +28,21 @@ public class Game {
         //if the positions in first row are taken
         if (_board.isRowNotEmpty(0)) {
             if (_board.isRowCompleted(0)) {
-                return _board.TileAt(new Position(0, 0)).symbol;
+                return _board.getSymbolAt(new Position(0, 0));
             }
         }
 
         //if the positions in first row are taken
         if (_board.isRowNotEmpty(1)) {
             if (_board.isRowCompleted(1)) {
-                return _board.TileAt(new Position(1, 0)).symbol;
+                return _board.getSymbolAt(new Position(1, 0));
             }
         }
 
         //if the positions in first row are taken
         if (_board.isRowNotEmpty(2)) {
             if (_board.isRowCompleted(2)) {
-                return _board.TileAt(new Position(2, 0)).symbol;
+                return _board.getSymbolAt(new Position(2, 0));
             }
         }
 
